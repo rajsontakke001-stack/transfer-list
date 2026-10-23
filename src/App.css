@@ -1,0 +1,312 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6fb;
+  color: #202b3c;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.app {
+  width: min(1050px, 94%);
+  margin: 45px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(35, 55, 85, 0.09);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #536de8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 10px 0;
+  font-size: 34px;
+}
+
+.page-header p {
+  color: #718096;
+  margin: 0;
+}
+
+.add-form {
+  display: flex;
+  gap: 10px;
+  max-width: 550px;
+  margin: 0 auto 30px;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d9e0ec;
+  border-radius: 8px;
+  outline: none;
+}
+
+.add-form input:focus,
+.edit-input:focus {
+  border-color: #536de8;
+}
+
+.add-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #536de8;
+  color: white;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  background: #3d56cc;
+}
+
+.transfer-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.list-section {
+  min-width: 0;
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.list-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 20px;
+  background: #e9edff;
+  color: #465ed1;
+  font-weight: 700;
+}
+
+.list-box {
+  min-height: 270px;
+  padding: 10px;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  background: #fafbfe;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 7px;
+  padding: 8px 10px;
+  border: 1px solid #e8edf5;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.list-item:last-child {
+  margin-bottom: 0;
+}
+
+.list-item.selected {
+  background: #eef1ff;
+  border-color: #aab7ff;
+}
+
+.list-item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #536de8;
+  cursor: pointer;
+}
+
+.item-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: #edf0ff;
+  color: #435bd0;
+}
+
+.edit-btn:hover {
+  background: #dfe5ff;
+}
+
+.edit-form {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.edit-input {
+  flex: 1;
+  min-width: 70px;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #d9e0ec;
+  border-radius: 5px;
+  outline: none;
+}
+
+.save-btn {
+  background: #198754;
+  color: white;
+}
+
+.cancel-btn {
+  background: #e9edf4;
+  color: #39465b;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.move-button {
+  width: 48px;
+  height: 45px;
+  border: none;
+  border-radius: 9px;
+  background: #536de8;
+  color: white;
+  font-size: 24px;
+}
+
+.move-button:hover:not(:disabled) {
+  background: #3d56cc;
+}
+
+.delete-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #d33a45;
+  font-weight: 600;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: #ffe0e0;
+}
+
+.empty-message {
+  margin: 90px 0;
+  color: #8994a6;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hint {
+  margin: 25px 0 0;
+  text-align: center;
+  color: #8490a3;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .app {
+    margin: 18px auto;
+    padding: 20px 14px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .transfer-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .move-button {
+    width: 55px;
+  }
+
+  .list-box {
+    min-height: 150px;
+  }
+
+  .empty-message {
+    margin: 45px 0;
+  }
+
+  .add-form {
+    flex-wrap: wrap;
+  }
+
+  .add-form input {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+}
